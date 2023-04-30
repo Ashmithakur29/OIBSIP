@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    font-family: border-box;
+    box-sizing: border-box;
+  }
+ 
+  
+  .container {
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(to bottom right, #33475b, #a6a6a6, #4c4c4c, rgb(0, 0, 0));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .cal {
+    background-image: linear-gradient(to bottom right, #000000, #525252, #adadad, rgb(255, 255, 255));
+    padding: 20px;
+    border-radius: 10px;
+  }
+  .cal form input {
+    border: 0;
+    outline: 0;
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+    box-shadow: -5px -5px 15px rgb(255, 255, 255),
+      5px 5px 15px rgb(255, 255, 255);
+    background: transparent;
+    font-size: 20px;
+    color: #fff;
+    margin: 10px;
+    cursor: pointer;
+  }
+  .display {
+    display: flex;
+    justify-content: flex-end;
+    margin: 10px 0;
+    box-shadow: none;
+   
+  }
+  .display input {
+    text-align: right;
+    flex: 1;
+    font-size: 70px;
+
+    box-shadow: none;
+  }
+  form input.operator {
+    color: #000000f5;
+    background-image: linear-gradient(to bottom right, #33475b, #a6a6a6, #4c4c4c, rgb(0, 0, 0));
+  }
+    </style>
+  <link rel="stylesheet" href="Calculator.css">
+  </head>
+  <body>
+    <div class="container">
+      <div class="cal">
+        <form>
+          <div class="display">
+            <input
+              type="text"
+              name="display"
+              style="height: 90px; font-size: 40px;background-color:rgb(255, 255, 255); color: rgb(0, 0, 0);"
+            />
+          </div>
+          <div>
+            <input
+              type="button"
+              value="AC"
+              class="operator"
+              onclick="display.value=''"
+            />
+            <input
+              type="button"
+              value="DE"
+              class="operator"
+              onclick="display.value=display.value.toString().slice(0,-1)"
+            />
+            <input
+              type="button"
+              value="."
+              class="operator"
+              onclick="display.value+='.'"
+            />
+            <input
+              type="button"
+              value="/"
+              class="operator"
+              onclick="display.value+='/'"
+            />
+          </div>
+          <div>
+            <input type="button" value="7" onclick="display.value+='7'" />
+            <input type="button" value="8" onclick="display.value+='8'" />
+            <input type="button" value="9" onclick="display.value+='9'" />
+            <input
+              type="button"
+              value="*"
+              class="operator"
+              onclick="display.value+='*'"
+            />
+          </div>
+          <div>
+            <input type="button" value="4" onclick="display.value+='4'" />
+            <input type="button" value="5" onclick="display.value+='5'" />
+            <input type="button" value="6" onclick="display.value+='6'" />
+            <input
+              type="button"
+              value="-"
+              class="operator"
+              onclick="display.value+='-'"
+            />
+          </div>
+          <div>
+            <input type="button" value="1" onclick="display.value+='1'" />
+            <input type="button" value="2" onclick="display.value+='2'" />
+            <input type="button" value="3" onclick="display.value+='3'" />
+            <input
+              type="button"
+              value="+"
+              class="operator"
+              onclick="display.value+='+'"
+            />
+          </div>
+          <div>
+            <input type="button" value="00" onclick="display.value+='0'" />
+            <input
+              type="button"
+              value="%"
+              class="operator"
+              onclick="display.value+='0'"
+            />
+            <input
+              type="button"
+              value="="
+              class="operator"
+              style="width: 145px"
+              onclick="display.value=eval(display.value)"
+            />
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
